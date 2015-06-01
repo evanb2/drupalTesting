@@ -1,0 +1,6 @@
+name = Bakery User Test
+description = Test for Bakery.
+package = Example modules
+core = 7.x
+dependencies[] = simpletest
+files[] = bakerytest.test

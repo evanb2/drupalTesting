@@ -1,0 +1,31 @@
+<?php
+
+class BakeryUserTestCase extends DrupalWebTestCase {
+
+    protected $privilegedUser;
+
+    public static function getInfo() {
+      return array(
+        'name' => 'Bakery User Test',
+        'description' => 'Ensure that the bakery_user module functions properly.',
+        'group' => 'Examples',
+      );
+    }
+
+    public function setUp() {
+      parent::setUp('bakery_user');
+      $this->privilegedUser = $this->drupalCreateUser(array('create bakery_user access', 'extra special edit any bakery_user'));
+      $this->drupalLogin($this->privilegedUser);
+    }
+
+    public function testBakeryUserLogin() {
+        $edit = array();
+        $edit['title'] = 'Welcome';
+        $edit['body'] = 'Please sign our guest book by leaving a comment!';
+        $this->drupalGet('welcome');
+        $this->assertText('Please sign our guest book by leaving a comment!', 'Content successfully verified.');
+
+    }
+
+
+}

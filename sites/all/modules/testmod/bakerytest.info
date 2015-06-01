@@ -1,0 +1,12 @@
+name = Bakery User Test
+description = Test for Bakery.
+package = Epicodus Examples
+core = 7.x
+dependencies[] = simpletest
+files[] = bakery_user.test
+
+; Information added by Drupal.org packaging script on 2015-03-11
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "examples"
+datestamp = "1426097283"
